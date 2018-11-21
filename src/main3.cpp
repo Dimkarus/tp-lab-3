@@ -12,7 +12,7 @@ int main()
 	//clock.getTomorrow();
 	//clock.getPast(45);
 	//clock.getFuture(10);
-	another.calcDifference(clock);
+	another.getDifference(clock);
 	system("pause");
 	return 0;
 }
