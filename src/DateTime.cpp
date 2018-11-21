@@ -79,7 +79,7 @@ std::string DateTime::getPast(unsigned int N)
 	tm * date = localtime(&now);
 	return givemestr(date);
 }
-int DateTime::calcDifference(DateTime& some_date)
+int DateTime::getDifference(DateTime& some_date)
 {
 	time_t diff = now - some_date.now;
 	localtime(&diff);

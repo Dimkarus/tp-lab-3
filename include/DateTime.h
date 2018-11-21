@@ -18,5 +18,5 @@ public:
 	std::string getTomorrow(); //- возвращение даты завтрашнего дня в виде строки.
 	std::string getFuture(unsigned int N); //- возвращение даты через N дней в будущем;
 	std::string getPast(unsigned int N); //- возвращение даты через N дней в прошлом;
-	int calcDifference(DateTime&);
+	int getDifference(DateTime&);
 };
