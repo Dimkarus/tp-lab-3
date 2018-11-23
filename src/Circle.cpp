@@ -20,19 +20,19 @@ Circle::~Circle() = default;
 
 // Setters
 
-void Circle::set_radius(double r) {
+void Circle::setRadius(double r) {
     radius = r;
     ference = 2*M_PI*radius;
     area = M_PI*radius*radius;
 }
 
-void Circle::set_ference(double f) {
+void Circle::setFerence(double f) {
     ference = f;
     radius = ference / 2 / M_PI;
     area = M_PI*radius*radius;
 }
 
-void Circle::set_area(double a) {
+void Circle::setArea(double a) {
     area = a;
     radius = sqrt(area / M_PI);
     ference = 2*M_PI*radius;
@@ -40,22 +40,22 @@ void Circle::set_area(double a) {
 
 // Getters
 
-double Circle::get_radius() {
+double Circle::getRadius() {
     return Circle::radius;
 }
 
-double Circle::get_ference() {
+double Circle::getFerence() {
     return Circle::ference;
 }
 
-double Circle::get_area() {
+double Circle::getArea() {
     return Circle::area;
 }
 
 // Copiers
 
 void Circle::copy_circle(Circle *c) {
-    Circle::set_radius(c->get_radius());
-    Circle::set_ference(c->get_ference());
-    Circle::set_area(c->get_area());
+    Circle::setRadius(c->getRadius());
+    Circle::setFerence(c->getFerence());
+    Circle::setArea(c->getArea());
 }

@@ -14,13 +14,13 @@ public:
     explicit Circle(double);
     ~Circle();
     // Setters
-    void set_radius(double);
-    void set_ference(double);
-    void set_area(double);
+    void setRadius(double);
+    void setFerence(double);
+    void setArea(double);
     // Getters
-    double get_radius();
-    double get_ference();
-    double get_area();
+    double getRadius();
+    double getFerence();
+    double getArea();
     // Copiers
     void copy_circle(Circle*);
 };
