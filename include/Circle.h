@@ -12,6 +12,7 @@ public:
     // Constructors
     Circle();
     explicit Circle(double);
+    ~Circle();
     // Setters
     void set_radius(double);
     void set_ference(double);

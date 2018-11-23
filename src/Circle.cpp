@@ -1,5 +1,7 @@
 #include "Circle.h"
 
+//#define M_PI 3.14
+
 // Constructors
 
 Circle::Circle() {
@@ -11,6 +13,10 @@ Circle::Circle(double r) {
     ference = 2*M_PI*radius;
     area = M_PI*radius*radius;
 }
+
+// Destructor
+
+Circle::~Circle() = default;
 
 // Setters
 

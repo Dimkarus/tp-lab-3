@@ -1,11 +1,23 @@
 #include <iostream>
-#include "Circle.h"
+#include <cstdio>
+#include "task1.h"
 
 int main() {
+    /*
     // working in meters
     auto earth = new Circle(6378100), big_earth = new Circle();
     big_earth->copy_circle(earth);
     big_earth->set_ference(big_earth->get_ference() + 1);
-    double diff = big_earth->get_radius() - earth->get_radius();
-    std::cout << diff << std::endl;
+//    std::cout << calcDelta(earth, big_earth) << std::endl;
+    printf("%.2f\n", calcDelta(earth, big_earth));
+    delete earth;
+    delete big_earth;
+
+    Circle c(0.0);
+//    std::cout << c.get_area() << std::endl;
+    printf("%.2f\n", c.get_ference());
+     */
+    printf("%lf\n", calcDelta());
+
+    return 0;
 }
