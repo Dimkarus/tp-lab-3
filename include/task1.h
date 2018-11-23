@@ -1,5 +1,5 @@
 #pragma once
 #include "Circle.h"
 
-double CalcDelta();
+double calcDelta();
 double calcCost();

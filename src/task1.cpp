@@ -1,7 +1,7 @@
 #include "task1.h"
 
 
-double CalcDelta()
+double calcDelta()
 {
 
 	Circle earth1;

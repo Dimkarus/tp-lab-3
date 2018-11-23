@@ -3,7 +3,7 @@
 
 int main()
 {
-	double diff = CalcDelta();
+	double diff = сalcDelta();
 	std::cout <<"The difference is "<< diff << std::endl;
 	getchar();
 	return 0;
