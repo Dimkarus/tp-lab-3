@@ -1,6 +1,7 @@
 #ifndef TASK1_TASK1_H
 #define TASK1_TASK1_H
 
+#include <cmath>
 #include "Circle.h"
 
 //calculate the space between the Earth and the rope

@@ -9,7 +9,6 @@ double calcDelta_(Circle *a, Circle *b) {
     }
 }
 
-
 double calcDelta() {
     auto *a = new Circle(6378100);
     auto *b = new Circle();

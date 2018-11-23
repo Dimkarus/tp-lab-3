@@ -41,15 +41,15 @@ void Circle::setArea(double a) {
 // Getters
 
 double Circle::getRadius() {
-    return Circle::radius;
+    return radius;
 }
 
 double Circle::getFerence() {
-    return Circle::ference;
+    return ference;
 }
 
 double Circle::getArea() {
-    return Circle::area;
+    return area;
 }
 
 // Copiers
