@@ -5,11 +5,10 @@
 
 int main()
 {
-	DateTime clock(11,11,2018);
+	DateTime clock(31, 10, 2018);
 	DateTime another(clock);
 	clock.getToday();
-	//clock.getYesterday();
-	//clock.getTomorrow();
+	clock.getTomorrow();
 	//clock.getPast(45);
 	//clock.getFuture(10);
 	another.getDifference(clock);
