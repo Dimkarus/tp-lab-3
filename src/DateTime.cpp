@@ -65,7 +65,6 @@ std::string DateTime::getToday() {
     out.append(std::to_string(this->time_tm->tm_year + 1900));
     out.append(", ");
     out.append(weekdays[this->time_tm->tm_wday]);
-    out.append("\n");
     return out;
 }
 
@@ -95,7 +94,6 @@ std::string DateTime::getPast(unsigned int n) {
     out.append(std::to_string(tmp_struct->tm_year + 1900));
     out.append(", ");
     out.append(weekdays[tmp_struct->tm_wday]);
-    out.append("\n");
     *tmp += n*SEC_DAY;
     tmp_struct = std::localtime(tmp);
     delete tmp;
@@ -120,7 +118,6 @@ std::string DateTime::getFuture(unsigned int n) {
     out.append(std::to_string(tmp_struct->tm_year + 1900));
     out.append(", ");
     out.append(weekdays[tmp_struct->tm_wday]);
-    out.append("\n");
     *tmp -= n*SEC_DAY;
     tmp_struct = std::localtime(tmp);
     delete tmp;
