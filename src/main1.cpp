@@ -3,21 +3,19 @@
 #include "task1.h"
 
 int main() {
-    /*
     // working in meters
-    auto earth = new Circle(6378100), big_earth = new Circle();
-    big_earth->copy_circle(earth);
-    big_earth->set_ference(big_earth->get_ference() + 1);
+//    auto earth = new Circle(6378100), big_earth = new Circle();
+//    big_earth->copy_circle(earth);
+//    big_earth->set_ference(big_earth->get_ference() + 1);
 //    std::cout << calcDelta(earth, big_earth) << std::endl;
-    printf("%.2f\n", calcDelta(earth, big_earth));
-    delete earth;
-    delete big_earth;
+//    printf("%.2f\n", calcDelta(earth, big_earth));
+//    delete earth;
+//    delete big_earth;
 
-    Circle c(0.0);
-//    std::cout << c.get_area() << std::endl;
-    printf("%.2f\n", c.get_ference());
-     */
-    printf("%lf\n", calcDelta());
+    Circle c(10.0);
+    std::cout << c.getFerence() << std::endl;
+//    printf("%.2f\n", c.get_ference());
+//    printf("%lf\n", calcDelta());
 
     return 0;
 }

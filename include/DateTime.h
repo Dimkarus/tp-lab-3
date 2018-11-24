@@ -5,6 +5,15 @@
 #include <chrono>
 #include <string>
 
+#include <iostream>
+
+#define SEC_DAY 86400
+#define SEC_COMM_YEAR 31536000
+#define SEC_LEAP_YEAR 31622400
+#define THREE_HOURS 10800
+#define COMM_BEFORE_1970 1491
+#define LEAP_BEFORE_1970 478
+
 class DateTime {
 private:
     std::time_t time_epoch;

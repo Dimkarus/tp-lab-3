@@ -1,17 +1,31 @@
 #include "DateTime.h"
 
-#define SEC_DAY 86400
-#define SEC_COMM_YEAR 31536000
-#define SEC_LEAP_YEAR 31622400
-#define THREE_HOURS 10800
-#define COMM_BEFORE_1970 1491
-#define LEAP_BEFORE_1970 478
-
 //TODO maybe handle some exceptions?
 
+static const std::string months[12] {"january",
+                                     "february",
+                                     "march",
+                                     "april",
+                                     "may",
+                                     "june",
+                                     "july",
+                                     "august",
+                                     "september",
+                                     "october",
+                                     "november",
+                                     "december"};
+
+static const std::string weekdays[7] {"sunday",
+                                      "monday",
+                                      "tuesday",
+                                      "wednesday",
+                                      "thursday",
+                                      "friday",
+                                      "saturday"};
+
 DateTime::DateTime() {
-    time_epoch = std::time(nullptr);
-    time_tm = std::localtime(&time_epoch);
+    this->time_epoch = std::time(nullptr);
+    this->time_tm = std::localtime(&time_epoch);
 }
 
 DateTime::DateTime(int day, int month, int year) {
@@ -26,61 +40,97 @@ DateTime::DateTime(int day, int month, int year) {
     std::time_t time_tmp = 0;
     time_tmp += SEC_COMM_YEAR*comm_qty + SEC_LEAP_YEAR*leap_qty;
     time_tmp += sec_in_year(day, month, year);
-    time_epoch = time_tmp;
-    time_tm = std::localtime(&time_epoch);
+    this->time_epoch = time_tmp;
+    this->time_tm = std::localtime(&time_epoch);
 }
 
 DateTime::DateTime(DateTime &datetime) {
-    time_epoch = datetime.time_epoch;
-    time_tm = std::localtime(&time_epoch);
+    this->time_epoch = datetime.time_epoch;
+    this->time_tm = std::localtime(&time_epoch);
 }
 
 DateTime::~DateTime() = default;
 
 std::string DateTime::getToday() {
-    return std::asctime(std::localtime(&time_epoch));
+    std::string out;
+    if (this->time_tm->tm_mday < 10) {
+        out.append("0");
+        out.append(std::to_string(this->time_tm->tm_mday));
+    } else {
+        out.append(std::to_string(this->time_tm->tm_mday));
+    }
+    out.append(" ");
+    out.append(months[this->time_tm->tm_mon]);
+    out.append(" ");
+    out.append(std::to_string(this->time_tm->tm_year + 1900));
+    out.append(", ");
+    out.append(weekdays[this->time_tm->tm_wday]);
+    out.append("\n");
+    return out;
 }
 
 std::string DateTime::getYesterday() {
-    auto tmp = new std::time_t;
-    *tmp = time_epoch;
-    *tmp -= SEC_DAY;
-    std::string str = std::asctime(std::localtime(tmp));
-    delete tmp;
-    return str;
+    return this->getPast(1);
 }
 
 std::string DateTime::getTomorrow() {
-    auto tmp = new std::time_t;
-    *tmp = time_epoch;
-    *tmp += SEC_DAY;
-    std::string str = std::asctime(std::localtime(tmp));
-    delete tmp;
-    return str;
-}
-
-std::string DateTime::getFuture(unsigned int n) {
-    auto tmp = new std::time_t;
-    *tmp = time_epoch;
-    *tmp += n*SEC_DAY;
-    std::string str = std::asctime(std::localtime(tmp));
-    delete tmp;
-    return str;
+    return this->getFuture(1);
 }
 
 std::string DateTime::getPast(unsigned int n) {
     auto tmp = new std::time_t;
-    *tmp = time_epoch;
+    *tmp = this->time_epoch;
     *tmp -= n*SEC_DAY;
-    std::string str = std::asctime(std::localtime(tmp));
+    auto tmp_struct = std::localtime(tmp);
+    std::string out;
+    if (tmp_struct->tm_mday < 10) {
+        out.append("0");
+        out.append(std::to_string(tmp_struct->tm_mday));
+    } else {
+        out.append(std::to_string(tmp_struct->tm_mday));
+    }
+    out.append(" ");
+    out.append(months[tmp_struct->tm_mon]);
+    out.append(" ");
+    out.append(std::to_string(tmp_struct->tm_year + 1900));
+    out.append(", ");
+    out.append(weekdays[tmp_struct->tm_wday]);
+    out.append("\n");
+    *tmp += n*SEC_DAY;
+    tmp_struct = std::localtime(tmp);
     delete tmp;
-    return str;
+    return out;
+}
+
+std::string DateTime::getFuture(unsigned int n) {
+    auto tmp = new std::time_t;
+    *tmp = this->time_epoch;
+    *tmp += n*SEC_DAY;
+    auto tmp_struct = std::localtime(tmp);
+    std::string out;
+    if (tmp_struct->tm_mday < 10) {
+        out.append("0");
+        out.append(std::to_string(tmp_struct->tm_mday));
+    } else {
+        out.append(std::to_string(tmp_struct->tm_mday));
+    }
+    out.append(" ");
+    out.append(months[tmp_struct->tm_mon]);
+    out.append(" ");
+    out.append(std::to_string(tmp_struct->tm_year + 1900));
+    out.append(", ");
+    out.append(weekdays[tmp_struct->tm_wday]);
+    out.append("\n");
+    *tmp -= n*SEC_DAY;
+    tmp_struct = std::localtime(tmp);
+    delete tmp;
+    return out;
 }
 
 unsigned int DateTime::getDifference(DateTime &datetime) {
     auto *time_tmp = new std::time_t;
     *time_tmp = datetime.time_epoch;
-    *time_tmp -= time_epoch;
+    *time_tmp -= this->time_epoch;
     if (*time_tmp < 0) {
          *time_tmp *= -1;
     }

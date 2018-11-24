@@ -10,10 +10,11 @@ int main() {
     std::cout << date.getYesterday() << std::endl;
     std::cout << date.getToday() << std::endl;
     std::cout << date.getTomorrow() << std::endl;
+//    std::cout << date.getToday() << std::endl;
     std::cout << date.getPast(15) << std::endl;
     std::cout << date.getFuture(10) << std::endl;
 //
-    DateTime tmp(11, 9, 2001);
+    DateTime tmp(1, 11, 2018);
     std::cout << tmp.getToday() << std::endl;
 
     /*
@@ -30,7 +31,7 @@ int main() {
     std::cout << std::asctime(std::localtime(&test)) << std::endl;
 
     DateTime dt1(20,11,2018);
-    DateTime dt2(21,11,2018);
+    DateTime dt2(20,11,2018);
     std::cout << dt1.getDifference(dt2) << std::endl;
 
     return 0;
