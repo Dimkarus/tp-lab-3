@@ -4,7 +4,7 @@
 #include <iostream>
 
 
-DateTime::DateTime(T dNum, T mNum, T yNum) {
+DateTime::DateTime(TT dNum, TT mNum, TT yNum) {
 	time_t date = time(0);                                      
 	tm * p = localtime(&date);                                
 	p->tm_year = yNum - 1900;              
@@ -41,21 +41,21 @@ string DateTime::getTomorrow() {
 	strftime(buffer, 80, "%d %B %Y, %A", t);
 	return buffer;
 }
-string DateTime::getFuture(T N) {
+string DateTime::getFuture(TT N) {
 	now += 86400 * N;
 	tm * t = localtime(&now);
 	char buffer[80];
 	strftime(buffer, 80, "%d %B %Y, %A", t);
 	return buffer;
 }
-string DateTime::getPast(T N) {
+string DateTime::getPast(TT N) {
 	now -= 86400 * N;
 	tm * t = localtime(&now);
 	char buffer[80];
 	strftime(buffer, 80, "%d %B %Y, %A", t);
 	return buffer;
 }
-T DateTime::getDifference(DateTime & dt) {
-	T N = abs(this->now - dt.now)/86400;
+TT DateTime::getDifference(DateTime & dt) {
+	TT N = abs(this->now - dt.now)/86400;
 	return N;
 }

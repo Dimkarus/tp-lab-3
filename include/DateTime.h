@@ -8,37 +8,22 @@ using namespace std;
 #ifndef _DATETIME_H_
 #define _DATETIME_H_
 
-typedef unsigned int T;
+typedef unsigned int TT;
 
 class DateTime {
 private:
 	time_t now;
 public:
-	DateTime(T, T, T);
+	DateTime(TT, TT, TT);
 	DateTime();
 	DateTime(const DateTime &);
 	string getToday();
 	string getYesterday();
 	string getTomorrow();
-	string getFuture(T);
-	string getPast(T);
-	T getDifference(DateTime &);
+	string getFuture(TT);
+	string getPast(TT);
+	TT getDifference(DateTime &);
 };
 
 #endif
 
-/*В качестве основы взять функции и структуры для работы с временем из стандартной библиотеки(struct tm, time, localtime, mktime)
-
-Добавить в класс DateTime следующие методы :
-
-конструктор с тремя числовыми параметрами(день, месяц, год);
-конструктор без параметров(объект использует текущую дату);
-конструктор копирования(создаём копию другого объекта);
-getToday() - возвращение текущей даты в виде строки, с указанием дня недели и 
-			названия месяца(например 07 november 2018, wedensday);
-getYesterday() - возвращение даты вчерашнего дня в виде строки.
-getTomorrow() - возвращение даты завтрашнего дня в виде строки.
-getFuture(unsigned int N) - возвращение даты через N дней в будущем;
-getPast(unsigned int N) - возвращение даты через N дней в прошлом;
-getDifference(DateTime&) - для расчёта разницы(в днях) между двумя датами
-Для работы со строками используется тип std::string*/
