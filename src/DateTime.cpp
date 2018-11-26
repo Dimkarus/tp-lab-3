@@ -1,8 +1,21 @@
-#pragma warning(disable : 4996) 
+#pragma warning(disable : 4996)  //for localtime()
 //реализация методов
 #include "DateTime.h"
 #include <iostream>
 
+
+string sData(time_t now) {
+	tm * t = localtime(&now);
+	char buffer[80];
+	strftime(buffer, 80, "%d %B %Y, %A", t);
+	buffer[3] += 32;    // A -> a (ASCII)
+	int i = string(buffer).find(',');
+	buffer[i + 2] += 32;
+	//delete t;         //не нужно удалять, т.к. эта структура статически распределена 
+						//и разделяется функциями gmtime и localtime. Каждый раз, когда
+						//называется одна из этих функций, содержимое этой структуры перезаписывается.
+	return buffer;
+}
 
 DateTime::DateTime(TT dNum, TT mNum, TT yNum) {
 	time_t date = time(0);                                      
@@ -19,41 +32,23 @@ DateTime::DateTime(const DateTime & dt) {
 	now = dt.now;
 }
 string DateTime::getToday() {
-	tm * t = localtime(&now);
-	char buffer[80];
-	strftime(buffer, 80, "%d %B %Y, %A", t);
-	//delete t;         //не нужно удалять, т.к. эта структура статически распределена 
-						//и разделяется функциями gmtime и localtime. Каждый раз, когда
-						//называется одна из этих функций, содержимое этой структуры перезаписывается.
-	return buffer;
+	return sData(now);
 }
 string DateTime::getYesterday() {
 	now -= 86400;
-	tm * t = localtime(&now);
-	char buffer[80];
-	strftime(buffer, 80, "%d %B %Y, %A", t);
-	return buffer;
+	return sData(now);
 }
 string DateTime::getTomorrow() {
 	now += 86400;
-	tm * t = localtime(&now);
-	char buffer[80];
-	strftime(buffer, 80, "%d %B %Y, %A", t);
-	return buffer;
+	return sData(now);
 }
 string DateTime::getFuture(TT N) {
 	now += 86400 * N;
-	tm * t = localtime(&now);
-	char buffer[80];
-	strftime(buffer, 80, "%d %B %Y, %A", t);
-	return buffer;
+	return sData(now);
 }
 string DateTime::getPast(TT N) {
 	now -= 86400 * N;
-	tm * t = localtime(&now);
-	char buffer[80];
-	strftime(buffer, 80, "%d %B %Y, %A", t);
-	return buffer;
+	return sData(now);
 }
 TT DateTime::getDifference(DateTime & dt) {
 	TT N = abs(this->now - dt.now)/86400;

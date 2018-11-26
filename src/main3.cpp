@@ -1,5 +1,5 @@
-//демонстрация использования класса DateTime
-#pragma warning(disable : 4996) 
+//демонстрация использования класса DateTime  
+#pragma warning(disable : 4996)  // for localtime()
 #include <iostream>
 #include <string>
 #include <ctime>
@@ -31,7 +31,11 @@ int main() {
 
 		DateTime dt8(dt7);
 		cout << "21 november 2018" << " " << dt8.getToday() << endl;
+
+
 	
+	system("pause");
+
 	return 0;
 }
 

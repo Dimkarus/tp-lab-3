@@ -3,7 +3,7 @@
 #include "Circle.h"
 #include <math.h>
 
-double pi = 3.1415;
+double pi = 3.14;
 
 Circle::Circle(T rad) {
 	radius = rad;
