@@ -1,6 +1,7 @@
 #include <iostream>
 #include "task1.h"
 #include "Circle.h"
+#include <math.h>
 double calcDelta()
 {
 	double kusok = 1;
