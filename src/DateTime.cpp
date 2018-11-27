@@ -46,14 +46,14 @@ string DateTime::Shift(int power)
 
     if (u->tm_mday < 10){
         buf.append("0");
-    //    buf.append(to_string(u->tm_mday));
+        buf.append(to_string(u->tm_mday));
     }
-    //else buf.append(to_string(u->tm_mday));
+    else buf.append(to_string(u->tm_mday));
 
     buf.append(" ");
     buf.append(months[u->tm_mon]);
     buf.append(" ");
-    //buf.append(to_string(u->tm_year+1900));
+    buf.append(to_string(u->tm_year+1900));
     buf.append(", ");
     buf.append(weekdays[u->tm_wday]);
 
