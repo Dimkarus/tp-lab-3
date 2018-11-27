@@ -1,5 +1,5 @@
 #include<ctime>
-#include <string>
+#include <string.h>
 #include <math.h>
 #include <iostream>
 #include "DateTime.h"
