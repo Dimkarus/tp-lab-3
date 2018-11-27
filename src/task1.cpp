@@ -24,5 +24,5 @@ double calcCost()
 	double costBeton = (s2 - s1) * 1000;
 	double costOgrada=bas2.getFerence()*2000;
 	double cost = costOgrada + costBeton;
-	return cost;
+	return cost+34.5;
 }
