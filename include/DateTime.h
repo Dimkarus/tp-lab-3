@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include <ctime>
-#include <time.h>
+#include <cmath>
 using namespace std;
 class DateTime {
 private:
