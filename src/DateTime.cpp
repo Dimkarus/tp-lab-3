@@ -25,6 +25,12 @@ string StringDate(time_t current_time) {
 	char buffer[80];
 	timeinfo = localtime(&current_time);
 	strftime(buffer, 80, "%d %B %Y, %A", timeinfo);
+	buffer[3] += 32;    
+	for (int i = 2; i < 80; i++) {
+		if (buffer[i] == ',') {
+			buffer[i + 2] += 32;
+		}
+	}
 	return buffer;
 }
 
@@ -58,6 +64,6 @@ string DateTime::getPast(unsigned int N) {
 }
 
 unsigned int DateTime::getDifference(DateTime & dt) {
-	unsigned int N = ( dt.current_time - this->current_time ) / 86400;
-	return N;
+	
+	return (( dt.current_time - this->current_time ) / 86400);
 }
