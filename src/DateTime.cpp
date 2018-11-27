@@ -64,8 +64,7 @@ string DateTime::getPast(unsigned int N) {
 }
 
 unsigned int DateTime::getDifference(DateTime & dt) {
-	unsigned int N = dt.current_time - this->current_time;
-	N = N/86400;
+	unsigned int N = (abs(dt.current_time - this->current_time))/86400;
 	//cout << N << endl;
 	return N;
 }
