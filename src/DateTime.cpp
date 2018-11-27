@@ -1,11 +1,11 @@
 #include<ctime>
-#include <string>
+#include <сstring>
 #include <math.h>
 #include <iostream>
 #include "DateTime.h"
 void Lower(char* buffer) 
 {
-	for (int i = 0; i < std::strlen(buffer); i++)
+	for (int i = 0; i < strlen(buffer); i++)
 	{
 		if (isupper(buffer[i]))
 		{
