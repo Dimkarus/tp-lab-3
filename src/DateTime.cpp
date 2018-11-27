@@ -1,5 +1,6 @@
 #include<ctime>
 #include <string>
+#include <math.h>
 #include <iostream>
 #include "DateTime.h"
 void Lower(char* buffer) 
