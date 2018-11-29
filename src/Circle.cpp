@@ -1,0 +1,47 @@
+#pragma once
+#include "Circle.h"
+
+Circle::Circle() 
+{
+}
+
+Circle::Circle(double radius) 
+{
+	this->setRadius(radius);
+}
+
+void Circle::setRadius(double radius) 
+{
+	this->radius = radius;
+	this->ference = radius * 3.14 * 2;
+	this->area = radius * radius * 3.14;
+}
+
+const double Circle::getRadius() const 
+{
+	return this->radius;
+}
+
+void Circle::setFerence(double ference) 
+{
+	this->ference = ference;
+	this->radius = ference / (3.14 * 2);
+	this->area = radius * radius * 3.14;
+}
+
+const double Circle::getFerence() const 
+{
+	return this->ference;
+}
+
+void Circle::setArea(double area) 
+{
+	this->radius = sqrt(area / 3.14);
+	this->ference = radius * 3.14 * 2;
+	this->area = area;
+}
+
+const double Circle::getArea() const 
+{
+	return this->area;
+}
