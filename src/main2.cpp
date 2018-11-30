@@ -2,7 +2,7 @@
 #include "task1.h"
 int main()
 {
-	cout << calcCost(3.0) << " cost" << endl;
+	cout << calcCost() << " cost" << endl;
 	system("pause");
 	return 0;
 }
