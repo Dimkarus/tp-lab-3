@@ -1,4 +1,4 @@
-#pragma once
+
 #include "Circle.h"
 
 Circle::Circle() 
