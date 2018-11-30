@@ -2,7 +2,7 @@
 #include "Circle.h"
 #include "task1.h"
 
-double calcDelta(double r) 
+double calcDelta() 
 {
 	Circle circle;
 	circle.setRadius(r);
@@ -11,7 +11,7 @@ double calcDelta(double r)
 	return (circle.getRadius() - r) * 1000; 
 }
 
-double calcCost(double r)
+double calcCost()
 {
 	Circle circle;
 	circle.setRadius(r + 1.0);
