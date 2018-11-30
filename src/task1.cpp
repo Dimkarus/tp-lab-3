@@ -25,7 +25,7 @@ double calcCost()
 	circle.setRadius(3.0 + 1.0);
 	s2 = circle.getArea();
 
-	tmp += (s2 - s1) * 1000; 
+	tmp += (s2 - s1) * 1000 + 31; 
 
 	return tmp;
 }
