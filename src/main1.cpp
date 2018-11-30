@@ -2,7 +2,7 @@
 #include "Circle.h"
 int main()
 {
-	std::cout << calcDelta(6378.1) << "km" << std::endl;
+	cout << calcDelta() << "km" << endl;
 	system("pause");
 	return 0;
 }
