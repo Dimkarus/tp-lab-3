@@ -11,7 +11,7 @@ double calcDelta() {
 	c.setFerence(ference1 + diffFer);
 	radius2 = c.getRadius();
 	delta = radius2 - radius1;
-	delta=round(delta*100)/100;
+	delta=round(delta*1000)/1000;
 	return delta;
 }
 double calcCost() {

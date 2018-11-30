@@ -1,6 +1,8 @@
 #include "task1.h";
 Circle::Circle(double data) {
 	radius = data;
+	ference = 2 * M_PI*radius;
+	area = M_PI*radius*radius;
 }
 void Circle::setRadius(double data) {
 	radius = data;

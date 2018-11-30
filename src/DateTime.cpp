@@ -59,6 +59,6 @@ string DateTime::getPast(unsigned int N) {
 }
 string DateTime::getStr(tm* new_t) {
 	string s;
-	s += to_string(new_t->tm_mday) + " " + month[new_t->tm_mon] + " " + to_string(new_t->tm_year + 1900) + ", " + weekday[new_t->tm_wday];
+	s += "0"+to_string(new_t->tm_mday) + " " + month[new_t->tm_mon] + " " + to_string(new_t->tm_year + 1900) + ", " + weekday[new_t->tm_wday];
 	return s;
 }
