@@ -1,4 +1,4 @@
-#include "test1.h"
+#include "task1.h"
 int main()
 {
 	setlocale(LC_ALL, "rus");
