@@ -8,7 +8,10 @@ double calcDelta()
 	circle.setRadius(6378.1);
 	circle.setFerence(circle.getFerence() + 0.001);
 	
-	return (circle.getRadius() - 6378.1) * 1000; 
+	double a = (circle.getRadius() - 6378.1) * 1000; 
+	a = int(a * 1000); 
+	a = a / 1000;
+	return a;
 }
 
 double calcCost()
