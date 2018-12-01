@@ -6,8 +6,6 @@
 #include <iostream>
 #include "task1.h"
 #include "DateTime.h"
-#include "hashT.h"
-#include "hashFun.h"
 #include <ctime>
 #include <time.h>
 #include <cstring>
