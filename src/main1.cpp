@@ -3,8 +3,9 @@
 #include "task1.h"
 
 
+using namespace std;
 
 int main() {
-    std::cout << calcDelta() << "km" << " " << calcCost() << "rub" <<std::endl;
+    cout << calcDelta() << "km" <<endl;
     return 0;
 }
