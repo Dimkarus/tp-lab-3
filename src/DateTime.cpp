@@ -22,6 +22,7 @@ DateTime::DateTime (tm t){
 
 DateTime::DateTime (){
 
+    time = new tm();
     _getsystime(time);
 
 }
