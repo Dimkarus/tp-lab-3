@@ -1,4 +1,4 @@
-#include "../src/Circle.cpp"
+#include "Circle.h"
 
 double calcDelta();
 double calcCost();
