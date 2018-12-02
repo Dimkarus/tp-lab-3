@@ -18,7 +18,7 @@ TEST(circle,circle_get_ference1)
 TEST(circle,circle_get_area2)
 {
     Circle c(10.0);
-    EXPECT_DOUBLE_EQ(314.0,c.getArea());
+    EXPECT_EQ(314.0,c.getArea());
 }
 TEST(circle,circle_get_ference2)
 {
@@ -59,9 +59,9 @@ TEST(date,datetime_getdiff2)
 }
 TEST(calc,delta)
 {    
-    EXPECT_DOUBLE_EQ(0.159,calcDelta());
+    EXPECT_DOUBLE_EQ(0.159155,calcDelta());
 }
 TEST(calc,pool_cost)
 {    
-    EXPECT_DOUBLE_EQ(72256.6,calcCost());
+    EXPECT_EQ(72256,calcCost());
 }
