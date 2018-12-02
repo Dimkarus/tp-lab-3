@@ -22,8 +22,8 @@ DateTime::DateTime (tm t){
 
 DateTime::DateTime (){
 
-    time = new tm();
-    _getsystime(time);
+    time_t seconds = std::time(NULL);
+    time = localtime (&seconds);
 
 }
 
