@@ -18,7 +18,7 @@ TEST(circle,circle_get_ference1)
 TEST(circle,circle_get_area2)
 {
     Circle c(10.0);
-    EXPECT_EQ(0, (int)(abs(314.0 - c.getArea()) * 10));
+    EXPECT_EQ(0, (int)(abs(314.0 - c.getArea())));
 }
 TEST(circle,circle_get_ference2)
 {
