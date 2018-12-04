@@ -18,12 +18,12 @@ TEST(circle,circle_get_ference1)
 TEST(circle,circle_get_area2)
 {
     Circle c(10.0);
-    EXPECT_DOUBLE_EQ(314.0,c.getArea());
+    EXPECT_EQ(0, (int)(abs(314.0 - c.getArea())));
 }
 TEST(circle,circle_get_ference2)
 {
     Circle c(10.0);
-    EXPECT_DOUBLE_EQ(62.8,c.getFerence());
+    EXPECT_DOUBLE_EQ(0, (int)(abs(62.8 - c.getFerence()) * 10));
 }
 TEST(date,datetime_gettomorrow1)
 {
@@ -41,7 +41,7 @@ TEST(date,datetime_gettoday)
 {
     DateTime dt(1,11,2018);
     std::string expect="01 november 2018, thursday";
-    EXPECT_EQ(expect,dt.getTomorrow());
+    EXPECT_EQ(expect,dt.getToday());
 }
 TEST(date,datetime_getdiff1)
 {
@@ -59,9 +59,9 @@ TEST(date,datetime_getdiff2)
 }
 TEST(calc,delta)
 {    
-    EXPECT_DOUBLE_EQ(0.159,calcDelta());
+    EXPECT_DOUBLE_EQ(0, (int)(abs(0.159 - calcDelta()) * 10));
 }
 TEST(calc,pool_cost)
 {    
-    EXPECT_DOUBLE_EQ(72231.0,calcCost());
+    EXPECT_EQ(0, (int)(abs(72256.6 - calcCost()) * 10));
 }
