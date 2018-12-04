@@ -1,0 +1,44 @@
+#include "DateTime.h"
+int main() {
+	setlocale(LC_ALL, "rus");
+	DateTime t;
+	int diff = 10;
+	string date; 
+	string yDate; 
+	string tDate;
+	string date2; 
+	string yDate2; 
+	string tDate2; 
+	string fDate; 
+	string pDate; 
+	date = t.getToday();
+	cout << "The current date:" << date<<endl;
+	yDate = t.getYesterday();
+	cout << "Yesterday's date:" << yDate<< endl;
+	tDate = t.getTomorrow();
+	cout << "Tomorrow's date:" << tDate<< endl;
+	cout << "\n";
+	DateTime t2(31, 10, 2018);
+	date2 = t2.getToday();
+	cout << "The current date 31.10.2018\n";
+	cout << "The current date:" <<date2<< endl;
+	yDate2 = t2.getYesterday();
+	cout << "Yesterday's date:" << yDate2<<endl;
+	tDate2 = t2.getTomorrow();
+	cout << "Tomorrow's date:" << tDate2<< endl;
+	cout << "\n";
+	DateTime t3;
+	cout << "difference=" << diff << endl;
+	fDate = t3.getFuture(diff);
+	cout << "Future date:" << fDate<<endl;
+	pDate = t3.getPast(diff);
+	cout << "Past date:" << pDate<< endl;
+	cout << "\n";
+	DateTime t4(29,10,2018);
+	cout << t4.getToday() << endl;
+	DateTime t5(31, 10, 2018);
+	cout << t5.getToday() << endl;
+	cout <<"Разница в днях=" <<t5.getDifference(t4);
+	system("pause");
+	return 0;
+}
