@@ -1,8 +1,8 @@
 #include <iostream>
 #include <math.h>
 #include "Circle.h"
-#define PI 3.14
 using namespace std;
+double PI = 3.14;
 
 Circle::Circle(double r) {
 	radius = r;

@@ -2,6 +2,7 @@
 #include <math.h>
 #include "Circle.h"
 #include "task1.h"
+double PI = 3.14;
 
 double calcDelta() {
 	double rad = 6378.1;
@@ -19,7 +20,7 @@ double calcCost() {
 	double res;
 	Circle c1(3.0);
 	Circle c2(4.0);
-	res = (c2.getArea() - c1.getArea()) * 1000;
-	res = res + c2.getFerence() * 2000;
+	res = (c2.getArea()/PI*3.1415 - c1.getArea()/PI*3.1415) * 1000;
+	res = res + c2.getFerence()/PI*3.1415 * 2000;
 	return res;
 }
