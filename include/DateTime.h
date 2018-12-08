@@ -5,7 +5,7 @@ using namespace std;
 
 class DateTime {
 	time_t date;
-	struct tm date_info;
+	struct tm * date_info;
 public:
 	DateTime(int d, int m, int y);
 	DateTime();
