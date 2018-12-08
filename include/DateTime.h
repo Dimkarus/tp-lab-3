@@ -1,6 +1,7 @@
 #include <iostream>
 #include <time.h>
 #include <string>
+using namespace std;
 
 class DateTime {
 	time_t date;
