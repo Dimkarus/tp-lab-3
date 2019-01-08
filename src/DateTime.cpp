@@ -1,4 +1,5 @@
 #include <ctime>
+#include <cstring>
 
 #include "../include/DateTime.h"
 //DAY_CONST = 86400 (24 * 60 * 60)
