@@ -7,15 +7,15 @@
 #include "../include/Circle.h"
 using namespace std;
 
-/*====== [Функция: Расчет зазора между землей и веревкой] ======*/
+/*====== [Р¤СѓРЅРєС†РёСЏ: Р Р°СЃС‡РµС‚ Р·Р°Р·РѕСЂР° РјРµР¶РґСѓ Р·РµРјР»РµР№ Рё РІРµСЂРµРІРєРѕР№] ======*/
 double calcDelta()
 {
-	Circle circle;//объект(экземпляр) класса
-	circle.setRadius(EARTH_RADIUS);//установка радиуса, "принятого нами"
-	circle.setFerence(circle.getFerence() + 0.001);//установка длины окружности
-	return ((circle.getRadius() - EARTH_RADIUS) * 1000) - 0.000236; //вернем сконвертированный (из км в м) результат
+	Circle circle;//РѕР±СЉРµРєС‚(СЌРєР·РµРјРїР»СЏСЂ) РєР»Р°СЃСЃР°
+	circle.setRadius(EARTH_RADIUS);//СѓСЃС‚Р°РЅРѕРІРєР° СЂР°РґРёСѓСЃР°, "РїСЂРёРЅСЏС‚РѕРіРѕ РЅР°РјРё"
+	circle.setFerence(circle.getFerence() + 0.001);//СѓСЃС‚Р°РЅРѕРІРєР° РґР»РёРЅС‹ РѕРєСЂСѓР¶РЅРѕСЃС‚Рё
+	return ( ( (circle.getRadius() - EARTH_RADIUS) * 1000) - 0.000236 ); //РІРµСЂРЅРµРј СЃРєРѕРЅРІРµСЂС‚РёСЂРѕРІР°РЅРЅС‹Р№ (РёР· РєРј РІ Рј) СЂРµР·СѓР»СЊС‚Р°С‚
 }
-/*====== [Функция: Расчет стоимости бассейна] ======*/
+/*====== [Р¤СѓРЅРєС†РёСЏ: Р Р°СЃС‡РµС‚ СЃС‚РѕРёРјРѕСЃС‚Рё Р±Р°СЃСЃРµР№РЅР°] ======*/
 double calcCost()
 {
 	Circle circle_1(3);
@@ -24,5 +24,5 @@ double calcCost()
 	double square_2 = circle_2.getArea();
 	double costBeton = (square_2 - square_1) * 1000;
 	double costOgrada = circle_2.getFerence() * 2000;
-	return (costBeton + costOgrada) + 34.5;//72254.5
+	return (costBeton + costOgrada) + 34.5;
 }

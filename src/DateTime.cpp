@@ -4,75 +4,75 @@
 #include "../include/DateTime.h"
 //DAY_CONST = 86400 (24 * 60 * 60)
 
-/*=========== [Функция возвращает конечный результат строки] ===========*/
+/*=========== [Р¤СѓРЅРєС†РёСЏ РІРѕР·РІСЂР°С‰Р°РµС‚ РєРѕРЅРµС‡РЅС‹Р№ СЂРµР·СѓР»СЊС‚Р°С‚ СЃС‚СЂРѕРєРё] ===========*/
 string FormatDate(time_t current_time)
 {
-	const int size = 80;//Максимальный размер символов
-	const char* format = "%d %B %Y, %A";//Формат показа даты
-	char str[size];//Результатирующая строка с датой размером size символов
-	tm* timeinfo = localtime(&current_time);//Текущее локальное время и дата
+	const int size = 80;//РњР°РєСЃРёРјР°Р»СЊРЅС‹Р№ СЂР°Р·РјРµСЂ СЃРёРјРІРѕР»РѕРІ
+	const char* format = "%d %B %Y, %A";//Р¤РѕСЂРјР°С‚ РїРѕРєР°Р·Р° РґР°С‚С‹
+	char str[size];//Р РµР·СѓР»СЊС‚Р°С‚РёСЂСѓСЋС‰Р°СЏ СЃС‚СЂРѕРєР° СЃ РґР°С‚РѕР№ СЂР°Р·РјРµСЂРѕРј size СЃРёРјРІРѕР»РѕРІ
+	tm* timeinfo = localtime(&current_time);//РўРµРєСѓС‰РµРµ Р»РѕРєР°Р»СЊРЅРѕРµ РІСЂРµРјСЏ Рё РґР°С‚Р°
 
-	strftime(str, size, format, timeinfo);//Форматирование результатирующей строки
+	strftime(str, size, format, timeinfo);//Р¤РѕСЂРјР°С‚РёСЂРѕРІР°РЅРёРµ СЂРµР·СѓР»СЊС‚Р°С‚РёСЂСѓСЋС‰РµР№ СЃС‚СЂРѕРєРё
 
 	for (int i = 0; i < strlen(str); i++)
 	{
-		if (isupper(str[i])) str[i] = tolower(str[i]);//Сбрасываем в нижний регистр
+		if (isupper(str[i])) str[i] = tolower(str[i]);//РЎР±СЂР°СЃС‹РІР°РµРј РІ РЅРёР¶РЅРёР№ СЂРµРіРёСЃС‚СЂ
 	}
-	return str;//Возвращаем готовую результатирующую строку
+	return str;//Р’РѕР·РІСЂР°С‰Р°РµРј РіРѕС‚РѕРІСѓСЋ СЂРµР·СѓР»СЊС‚Р°С‚РёСЂСѓСЋС‰СѓСЋ СЃС‚СЂРѕРєСѓ
 }
-/*=========== [Конструктор по умолчанию] ===========*/
+/*=========== [РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ] ===========*/
 DateTime::DateTime()
 {
-	time(&now);//Текущее календарное время системы
-	tm * t = localtime(&now);//Текущее локальное время и дата
+	time(&now);//РўРµРєСѓС‰РµРµ РєР°Р»РµРЅРґР°СЂРЅРѕРµ РІСЂРµРјСЏ СЃРёСЃС‚РµРјС‹
+	tm * t = localtime(&now);//РўРµРєСѓС‰РµРµ Р»РѕРєР°Р»СЊРЅРѕРµ РІСЂРµРјСЏ Рё РґР°С‚Р°
 }
-/*=========== [Конструктор с 3мя параметрами] ===========*/
+/*=========== [РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ 3РјСЏ РїР°СЂР°РјРµС‚СЂР°РјРё] ===========*/
 DateTime::DateTime(int day, int month, int year)
 {
 	struct tm * timeinfo;
-	time(&now);//Текущее календарное время системы
-	timeinfo = localtime(&now);//Текущее локальное время и дата
-	timeinfo->tm_year = year - 1900;//Год
-	timeinfo->tm_mon = month - 1;//Месяц
-	timeinfo->tm_mday = day;//День
+	time(&now);//РўРµРєСѓС‰РµРµ РєР°Р»РµРЅРґР°СЂРЅРѕРµ РІСЂРµРјСЏ СЃРёСЃС‚РµРјС‹
+	timeinfo = localtime(&now);//РўРµРєСѓС‰РµРµ Р»РѕРєР°Р»СЊРЅРѕРµ РІСЂРµРјСЏ Рё РґР°С‚Р°
+	timeinfo->tm_year = year - 1900;//Р“РѕРґ
+	timeinfo->tm_mon = month - 1;//РњРµСЃСЏС†
+	timeinfo->tm_mday = day;//Р”РµРЅСЊ
 	now = mktime(timeinfo);//
 }
-/*=========== [Конструктор копирования] ===========*/
+/*=========== [РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ] ===========*/
 DateTime::DateTime(DateTime& date_obj)
 {
 	now = date_obj.now;
 }
-/*=========== [Метод: getToday] ===========*/
+/*=========== [РњРµС‚РѕРґ: getToday] ===========*/
 string DateTime::getToday()
 {
 	time_t now = DateTime::now;
 	return FormatDate(now);
 }
-/*=========== [Метод: getYesterday] ===========*/
+/*=========== [РњРµС‚РѕРґ: getYesterday] ===========*/
 string DateTime::getYesterday()
 {
 	time_t now = (DateTime::now) - DAY_CONST;
 	return FormatDate(now);
 }
-/*=========== [Метод: getTomorrow] ===========*/
+/*=========== [РњРµС‚РѕРґ: getTomorrow] ===========*/
 string DateTime::getTomorrow()
 {
 	time_t now = (DateTime::now) + DAY_CONST;
 	return FormatDate(now);
 }
-/*=========== [Метод: getFuture] ===========*/
+/*=========== [РњРµС‚РѕРґ: getFuture] ===========*/
 string DateTime::getFuture(unsigned int N)
 {
 	time_t now = (DateTime::now) + (DAY_CONST * N);
 	return FormatDate(now);
 }
-/*=========== [Метод: getPast] ===========*/
+/*=========== [РњРµС‚РѕРґ: getPast] ===========*/
 string DateTime::getPast(unsigned int N)
 {
 	time_t now = (DateTime::now) - (DAY_CONST * N);
 	return FormatDate(now);
 }
-/*=========== [Метод: getDifference] ===========*/
+/*=========== [РњРµС‚РѕРґ: getDifference] ===========*/
 int DateTime::getDifference(DateTime &d)
 {
 	int days = 0;

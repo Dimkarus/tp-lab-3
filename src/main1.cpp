@@ -7,5 +7,5 @@ using namespace std;
 
 int main()
 {
-	cout << calcDelta() << endl;//Âûâîä çàçîðà
+	cout << calcDelta() << endl;//Ð’Ñ‹Ð²Ð¾Ð´ Ð·Ð°Ð·Ð¾Ñ€Ð°
 }
