@@ -20,15 +20,15 @@ void Circle::setRadius(double radius)
 /*=========== [Метод: Установка длины окружности] ===========*/
 void Circle::setFerence(double ference)
 {
-	this->radius = ference / 2.0 / PI_CONST;
+	this->radius = ference / (2.0 * PI_CONST);
 	this->ference = ference;
 	this->area = PI_CONST * radius * radius;
 }
 /*=========== [Метод: Установка площади круга] ===========*/
 void Circle::setArea(double area)
 {
-	this->radius = sqrt(area) / 2.0 / PI_CONST;
-	this->ference = 2.0 * PI_CONST * this->radius;
+	this->radius = sqrt(area / (PI_CONST));
+	this->ference = 2.0 * PI_CONST * (this->radius);
 	this->area = area;
 }
 /*=========== [Метод: Получение радиуса] ===========*/

@@ -2,7 +2,7 @@
 #define CLASS_CIRCLE_h
 #pragma once
 
-#define PI_CONST 3.1415 //Число ПИ
+#define PI_CONST 3.14//Число ПИ (3.1415)
 #include <cmath>
 
 /*=========== [Описание класса Circle] ===========*/
