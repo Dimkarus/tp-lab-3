@@ -16,18 +16,14 @@ double calcDelta()
 double calcCost()
 {
 	Circle Circ;
-	Circ.setRadius(3.0 + 1.0);
-
-	double tm = Circ.getFerence() * 2000;
-
 	double p1, p2;
-
-	Circ.setRadius(3.0);
+	Circ.setRadius(3);
 	p1 = Circ.getArea();
-	Circ.setRadius(3.0 + 1.0);
+	Circ.setRadius(4);
 	p2 = Circ.getArea();
-
-	tm += (p2 - p1) * 1000 + 11.0;
-
+double rArea = (p2.getArea() - p1.getArea())*1000;
+	double rDefend = p2.getFerence() * 2000;
+	double tm = rArea + rDefend;
+	//tm = round(cost*10)/10;
 	return tm;
 }
