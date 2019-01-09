@@ -10,8 +10,8 @@ private:
 	time_t now_time;
 	string str_time;
 public: 
-	DateTime(unsigned int, unsigned int, unsigned int); 
 	DateTime();
+	DateTime(unsigned int, unsigned int, unsigned int); 
 	DateTime(const DateTime&);  
 	string getToday();   
 	string getYesterday();  
@@ -19,5 +19,4 @@ public:
 	string getFuture(unsigned int);  
 	string getPast(unsigned int);    
 	unsigned int getDifference(DateTime&);   
-
 };
