@@ -14,10 +14,10 @@ private:
 
 public:
 	Circle();
-	Circle(double);
-	void setRadius(double rad);
-	void setFerence(double fer);
-	void setArea(double ar);
+	Circle(double radius);
+	void setRadius(double radius);
+	void setFerence(double ference);
+	void setArea(double area);
 	const double getRadius() const;
 	const double getFerence() const;
 	const double getArea() const;
