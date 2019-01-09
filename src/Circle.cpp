@@ -20,14 +20,17 @@ void Circle::setArea(double ar)
 }
 const double Circle::getRadius() const
 {
+	//std::cout << radius << std::endl;
 	return radius;
 }
 const double Circle::getFerence() const
 {
+	//std::cout << ference << std::endl;
 	return ference;
 }
 const double Circle::getArea() const
 {
+	//std::cout << area << std::endl;
 	return area;
 }
 
