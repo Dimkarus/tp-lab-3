@@ -1,7 +1,9 @@
 #pragma once
 
 #include<iostream>
-#include <math.h>
+#include <cmath>
+
+using namespace std;
 
 class Circle
 {
@@ -9,14 +11,13 @@ private:
 	double radius;
 	double ference;
 	double area;
-
 public:
-	Circle(double);
 	Circle();
-	void setRadius(double rad);
-	void setFerence(double fer);
-	void setArea(double ar);
-	double getRadius();
-	double getFerence();
-	double getArea();
+	Circle(double radius);
+	void setRadius(double radius);
+	void setFerence(double ference);
+	void setArea(double area);
+	const double getRadius() const;
+	const double getFerence() const;
+	const double getArea() const;
 };
