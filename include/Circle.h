@@ -3,8 +3,6 @@
 #include<iostream>
 #include <math.h>
 
-using namespace std;
-
 class Circle
 {
 private:
@@ -13,8 +11,8 @@ private:
 	double area;
 
 public:
-	Circle();
 	Circle(double);
+	Circle();
 	void setRadius(double rad);
 	void setFerence(double fer);
 	void setArea(double ar);
