@@ -3,20 +3,20 @@
 void Circle::setRadius(double rad)
 {
 	radius = rad;
-	ference = 2*3.1415*rad;
-	area = 3.1415*rad*rad;
+	ference = 2*3.14*rad;
+	area = 3.14*rad*rad;
 }
 void Circle::setFerence(double fer)
 {
 	ference = fer;
-	radius = fer / (2 * 3.1415);
-	area = 3.1415*radius*radius;
+	radius = fer / (2 * 3.14);
+	area = 3.14*radius*radius;
 }
 void Circle::setArea(double ar)
 {
 	area = ar;
-	radius = sqrt(ar / (3.1415));
-	ference = 2*3.1415*radius;
+	radius = sqrt(ar / (3.14));
+	ference = 2*3.14*radius;
 }
 const double Circle::getRadius() const
 {
