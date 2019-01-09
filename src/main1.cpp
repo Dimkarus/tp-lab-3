@@ -2,8 +2,7 @@
 #include "Circle.h"
 int main()
 {
-	double diff = calcDelta();
-	std::cout << diff << std::endl;
+	//cout << calcDelta() << endl;
 	system("pause");
 	return 0;
 }
