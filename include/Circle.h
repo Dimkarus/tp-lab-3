@@ -1,7 +1,7 @@
 #pragma once
 
 #include<iostream>
-#include <cmath>
+#include <math.h>
 
 using namespace std;
 
@@ -14,7 +14,7 @@ private:
 
 public:
 	Circle();
-	Circle(double rad);
+	Circle(double);
 	void setRadius(double rad);
 	void setFerence(double fer);
 	void setArea(double ar);
