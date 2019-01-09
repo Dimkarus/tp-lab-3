@@ -1,44 +1,46 @@
 #include "Circle.h"
-
-void Circle::setRadius(double rad)
-{
-	radius = rad;
-	ference = 2*3.1415*rad;
-	area = 3.1415*rad*rad;
-}
-void Circle::setFerence(double fer)
-{
-	ference = fer;
-	radius = fer / (2 * 3.1415);
-	area = 3.1415*radius*radius;
-}
-void Circle::setArea(double ar)
-{
-	area = ar;
-	radius = sqrt(ar / (3.1415));
-	ference = 2*3.1415*radius;
-}
-const double Circle::getRadius() const
-{
-	//std::cout << radius << std::endl;
-	return radius;
-}
-const double Circle::getFerence() const
-{
-	//std::cout << ference << std::endl;
-	return ference;
-}
-const double Circle::getArea() const
-{
-	//std::cout << area << std::endl;
-	return area;
-}
+const double pi = 3.14;
+Circle::Circle(){}
 
 Circle::Circle(double radius)
 {
-	setRadius(radius);
+	this->setRadius(radius);
 }
-Circle::Circle() :radius(0.0)
+
+void Circle::setFerence(double ference)
 {
-	setRadius(0.0);
+	this->ference = ference;
+	this->radius = ference / (pi * 2);
+	this->area = radius * radius * pi;
+}
+
+void Circle::setRadius(double radius)
+{
+	this->radius = radius;
+	this->ference = radius * pi * 2;
+	this->area = radius * radius * pi;
+}
+
+
+void Circle::setArea(double area)
+{
+	this->radius = sqrt(area / pi);
+	this->ference = radius * pi * 2;
+	this->area = area;
+}
+
+const double Circle::getRadius() const
+{
+	return this->radius;
+}
+
+
+const double Circle::getFerence() const
+{
+	return this->ference;
+}
+
+const double Circle::getArea() const
+{
+	return this->area;
 }
