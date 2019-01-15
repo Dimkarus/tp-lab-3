@@ -17,7 +17,7 @@ public:
 	void setRadius(double radius);
 	void setFerence(double ference);
 	void setArea(double area);
-	double getRadius() const;
-	double getFerence() const;
-	double getArea() const;
+	const double getRadius() const;
+	const double getFerence() const;
+	const double getArea() const;
 };
