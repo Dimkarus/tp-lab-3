@@ -19,7 +19,7 @@ double calcCost()
 	Circle p2(4);
 	double rArea = (p2.getArea() - p1.getArea())*1000;
 	double rDefend = p2.getFerence() * 2000;
-	double tm = rArea + rDefend;
+	double tm = rArea + rDefend+34.5;
 	//tm = round(tm*10)/10;
 	return tm;
 }	
