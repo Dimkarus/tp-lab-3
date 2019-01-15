@@ -8,13 +8,13 @@ double calcDelta()
 	circ.setFerence(circ.getFerence() + 0.001);
 
 	double diff = (circ.getRadius() - 6378.1) * 1000;
-	diff = int(diff * 1000)/1000;
+	diff = (int(diff * 1000))/1000;
 	return diff;
 }
 
 double calcCost()
 {
-	Circle circ;
+Circle circ;
 circ.setRadius(3.0 + 1.0);
 double p1, p2;
 circ.setRadius(3.0);
