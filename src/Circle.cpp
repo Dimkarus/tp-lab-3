@@ -29,18 +29,18 @@ void Circle::setArea(double area)
 	this->area = area;
 }
 
-const double Circle::getRadius() const
+double Circle::getRadius() const
 {
 	return this->radius;
 }
 
 
-const double Circle::getFerence() const
+double Circle::getFerence() const
 {
 	return this->ference;
 }
 
-const double Circle::getArea() const
+double Circle::getArea() const
 {
 	return this->area;
 }
