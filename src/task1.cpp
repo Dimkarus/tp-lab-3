@@ -8,20 +8,18 @@ double calcDelta()
 	circ.setFerence(circ.getFerence() + 0.001);
 
 	double diff = (circ.getRadius() - 6378.1) * 1000;
-	diff = (int(diff * 1000))/1000;
+	diff = int(diff * 1000);
+	diff = diff / 1000;
 	return diff;
 }
 
 double calcCost()
 {
-Circle circ;
-circ.setRadius(3.0 + 1.0);
-double p1, p2;
-circ.setRadius(3.0);
-p1 = circ.getArea();
-circ.setRadius(4.0);
-p2 = circ.getArea();
-double tm = circ.getFerence() * 2000;
-tm += (p2 - p1) * 1000 + 34.5;
-return tm;
+	Circle p1(3);
+	Circle p2(4);
+	double rArea = (p2.getArea() - p1.getArea())*1000;
+	double rDefend = p2.getFerence() * 2000;
+	double tm = rArea + rDefend;
+	//tm = round(tm*10)/10;
+	return tm;
 }	
