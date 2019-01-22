@@ -7,6 +7,5 @@ using namespace std;
 int main2()
 {
 	cout << calcCost() << endl;
-	getchar();
 	return 0;
 }
