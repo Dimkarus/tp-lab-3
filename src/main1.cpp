@@ -7,6 +7,5 @@ using namespace std;
 int main()
 {
 	cout << calcDelta() << endl;
-	getchar();
 	return 0;
 }
