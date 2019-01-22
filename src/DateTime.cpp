@@ -1,7 +1,6 @@
 
-#define _CRT_SECURE_NO_WARNINGS
-#include "DateTime.h"
 
+#include "DateTime.h"
 
 using namespace std;
 
@@ -26,21 +25,17 @@ DateTime::DateTime() {
 }
 
 DateTime::DateTime(int day, int month, int year) {
-	time_t t; //создаем переменную для секунд
-	time(&t); //получаем время
-	tm *p = localtime(&t); //создаем стр для хранения данных о дате
-	// меняем значения в структуре под введеные пользователи
+	time_t t; //Г±Г®Г§Г¤Г ГҐГ¬ ГЇГҐГ°ГҐГ¬ГҐГ­Г­ГіГѕ Г¤Г«Гї Г±ГҐГЄГіГ­Г¤
+	time(&t); //ГЇГ®Г«ГіГ·Г ГҐГ¬ ГўГ°ГҐГ¬Гї
+	tm *p = localtime(&t); //Г±Г®Г§Г¤Г ГҐГ¬ Г±ГІГ° Г¤Г«Гї ГµГ°Г Г­ГҐГ­ГЁГї Г¤Г Г­Г­Г»Гµ Г® Г¤Г ГІГҐ
+	// Г¬ГҐГ­ГїГҐГ¬ Г§Г­Г Г·ГҐГ­ГЁГї Гў Г±ГІГ°ГіГЄГІГіГ°ГҐ ГЇГ®Г¤ ГўГўГҐГ¤ГҐГ­Г»ГҐ ГЇГ®Г«ГјГ§Г®ГўГ ГІГҐГ«ГЁ
 	p->tm_mday = day;
 	p->tm_mon = month - 1;
 	p->tm_year = year - 1900;
 
-	//преобразовываем новые давнные в секунды
+	//ГЇГ°ГҐГ®ГЎГ°Г Г§Г®ГўГ»ГўГ ГҐГ¬ Г­Г®ГўГ»ГҐ Г¤Г ГўГ­Г­Г»ГҐ Гў Г±ГҐГЄГіГ­Г¤Г»
 	seconds = mktime(p);
 }
-
-/*void print() {
-	cout << seconds;
-}*/
 
 string DateTime::getToday()
 {
