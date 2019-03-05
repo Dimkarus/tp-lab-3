@@ -14,32 +14,35 @@ Circle::Circle(double rad) {
 //fafggadg
 void Circle::setRadius(double rad) {
     radius = rad;
-    ference = 2*M_PI*radius;
-    area = M_PI*radius*radius;
+    ference = 2*pi*radius;
+    area = pi*radius*radius;
 }
 
 void Circle::setFerence(double fer) {
     ference = fer;
-    radius = ference/2/M_PI;
-    area = M_PI*radius*radius;
+    radius = ference/2/pi;
+    area = pi*radius*radius;
 }
 
 void Circle::setArea(double ar) {
     area = ar;
-    radius = sqrt(area/M_PI);
-    ference = 2*radius*M_PI;
+    radius = sqrt(area/pi);
+    ference = 2*radius*pi;
 }
 
 double Circle::getRadius() {
     return radius;
+
 }
 
 double Circle::getFerence() {
     return ference;
+
 }
 
 double Circle::getArea() {
     return area;
+
 }
 
 void Circle::printself() {

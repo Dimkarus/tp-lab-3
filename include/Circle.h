@@ -6,6 +6,7 @@
 #include <iostream>
 #include <math.h>
 using namespace std;
+#define pi 3.1415
 
 //void foo();
 class Circle{

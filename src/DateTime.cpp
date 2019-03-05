@@ -47,6 +47,7 @@ string return_str(tm *date) {
   else if (date->tm_wday==6) wdstr="saturday";
   stringstream temp;
   //temp << 55;
+  if (date->tm_mday<10) temp << 0;
   temp << date->tm_mday <<" "<< mon_str << " " << date->tm_year+1900 << ", " << wdstr;
   string output = temp.str();
   return output;
