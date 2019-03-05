@@ -24,17 +24,30 @@ DateTime::DateTime(const DateTime& copythat) {
 
 string return_str(tm *date) {
   //int wdint =date->tm_wday;
+  string mon_str;
+  if (date->tm_mon==0) mon_str="january";
+  else if (date->tm_mon==1) mon_str="february";
+  else if (date->tm_mon==2) mon_str="march";
+  else if (date->tm_mon==3) mon_str="april";
+  else if (date->tm_mon==4) mon_str="may";
+  else if (date->tm_mon==5) mon_str="june";
+  else if (date->tm_mon==6) mon_str="july";
+  else if (date->tm_mon==7) mon_str="august";
+  else if (date->tm_mon==8) mon_str="september";
+  else if (date->tm_mon==9) mon_str="october";
+  else if (date->tm_mon==10) mon_str="november";
+  else if (date->tm_mon==11) mon_str="december";
   string wdstr;
-  if (date->tm_wday==0) wdstr="Sunday";
-  else if (date->tm_wday==1) wdstr="Monday";
-  else if (date->tm_wday==2) wdstr="Tuesday";
-  else if (date->tm_wday==3) wdstr="Wednesday";
-  else if (date->tm_wday==4) wdstr="Thursday";
-  else if (date->tm_wday==5) wdstr="Friday";
-  else if (date->tm_wday==6) wdstr="Saturday";
+  if (date->tm_wday==0) wdstr="sunday";
+  else if (date->tm_wday==1) wdstr="monday";
+  else if (date->tm_wday==2) wdstr="tuesday";
+  else if (date->tm_wday==3) wdstr="wednesday";
+  else if (date->tm_wday==4) wdstr="thursday";
+  else if (date->tm_wday==5) wdstr="friday";
+  else if (date->tm_wday==6) wdstr="saturday";
   stringstream temp;
   //temp << 55;
-  temp << date->tm_mday <<"."<<date->tm_mon+1 << "." << date->tm_year+1900 << ", " << wdstr;
+  temp << date->tm_mday <<" "<< mon_str << " " << date->tm_year+1900 << ", " << wdstr;
   string output = temp.str();
   return output;
 }
