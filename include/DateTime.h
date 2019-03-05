@@ -23,5 +23,5 @@ public:
     string getTomorrow();
     string getFuture(unsigned int N);
     string getPast(unsigned int N);
-    string getDifference(DateTime&);
+    int getDifference(DateTime&);
 };

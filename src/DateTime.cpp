@@ -109,12 +109,10 @@ string DateTime::getPast(unsigned int N) {
   return return_str(temp_tm);
 }
 
-string DateTime::getDifference(DateTime& compare) {
+int DateTime::getDifference(DateTime& compare) {
     time_t diff = storage - compare.storage;
     //localtime(&diff);
 		diff =abs(diff/ 86400);
-    stringstream temp;
-    temp << diff;
-    string result = temp.str();
+    int result = diff;
 		return result;
 }
