@@ -25,5 +25,3 @@ public:
     string getPast(unsigned int N);
     string getDifference(DateTime&);
 };
-
-#endif //LAB3_DATETIME_H
