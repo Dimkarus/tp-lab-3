@@ -1,6 +1,8 @@
 #include <task1.h>
 #include "Circle.h"
 
+
+// Подсчет "зазора"
 double calcDelta()
 {
     double radE = 6378.1 * 1000;
@@ -10,6 +12,7 @@ double calcDelta()
     return earth.getRadius() - radE;
 }
 
+// Подсчет стоимости
 double calcCost()
 {
     double pathPrice(1000.0), fencePrice(2000.0);
