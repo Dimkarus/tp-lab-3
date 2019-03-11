@@ -12,9 +12,13 @@ class Circle{
 private:
     double radius, ference, area;
 public:
-    explicit Circle(double rad):radius(rad),ference(2*pi*radius),area(pi*radius*radius)
-    {}
     double pi = 3.14;
+    explicit Circle(double rad)
+    {
+        radius = rad;
+        ference = 2 * pi * radius;
+        area = pi * radius * radius;
+    }
     void setRadius(double radius);
     void setFerence(double ference);
     void setArea(double area);
