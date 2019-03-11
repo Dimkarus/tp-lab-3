@@ -81,7 +81,7 @@ string DateTime::getTomorrow() {
 
 int DateTime::getDifference(DateTime &d) {
     time_t rawtime = DateTime::rawtime;
-    int differ = (abs(rawtime - d.rawtime)) / 86400;
+    int differ = abs(int((rawtime - d.rawtime))) / 86400;
     return differ;
 }
 
