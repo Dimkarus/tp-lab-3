@@ -4,12 +4,15 @@
 
 #include <iostream>
 #include <ctime>
-#include"DateTime.h"
+#include"/Users/AlexSlav/Shtanuk/tp-lab-3/include/DateTime.h"
 using  namespace std;
 int main()
 {
-    DateTime dt(1, 11, 2018);
+    DateTime dt(2,12,1978);
+    DateTime d1(5,6,1979);
     string b = dt.getToday();
-    cout<< b;
+    string a = dt.getFuture(10);
+    cout <<  dt.getDifference(d1)<< endl;
+    cout<< b << endl << a ;
     return 0;
 }
