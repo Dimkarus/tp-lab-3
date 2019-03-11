@@ -8,10 +8,10 @@
 using  namespace std;
 int main()
 {
-    DateTime dt(31,10,2018);
+    DateTime dt(1,11,2018);
     DateTime d1(5,6,1979);
     DateTime dt2(1,11,2018);
-    string b = dt.getTomorrow();
+    string b = dt.getToday();
     string a = dt2.getToday();
     cout <<  dt.getDifference(d1)<< endl;
     cout<< b << endl << a ;

@@ -38,7 +38,7 @@ string  DateTime::getToday() {
     if (timeinfo->tm_mday <10){
         zero_check = '0';
     }
-    string str = to_string(timeinfo->tm_mday) + " " + months[timeinfo->tm_mon]+ " " +
+    string str = zero_check + to_string(timeinfo->tm_mday) + " " + months[timeinfo->tm_mon]+ " " +
                  to_string(timeinfo->tm_year + 1900) + ", " +  weekday[timeinfo->tm_wday]  ;
     return str;
 }
@@ -51,7 +51,7 @@ string DateTime::getPast(unsigned int N) {
     if (timeinfo->tm_mday <10){
         zero_check = '0';
     }
-    string str = to_string(timeinfo->tm_mday) + " " + months[timeinfo->tm_mon]+ " " +
+    string str = zero_check + to_string(timeinfo->tm_mday) + " " + months[timeinfo->tm_mon]+ " " +
                  to_string(timeinfo->tm_year + 1900) + ", " +  weekday[timeinfo->tm_wday]  ;
     return str;
 
