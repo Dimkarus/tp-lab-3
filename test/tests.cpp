@@ -25,7 +25,7 @@ TEST(circle,circle_get_ference2)
     Circle c(10.0);
     EXPECT_DOUBLE_EQ(62.8,c.getFerence());
 }
-TEST(date,datetime_gettomorrow1)
+/*TEST(date,datetime_gettomorrow1)
 {
     DateTime dt(31,10,2018);
     std::string expect="01 november 2018, thursday";
@@ -56,7 +56,7 @@ TEST(date,datetime_getdiff2)
     DateTime dt2(21,11,2018);
     int diff=1;
     EXPECT_EQ(diff,dt2.getDifference(dt1));
-}
+}*/
 TEST(calc,delta)
 {    
     EXPECT_EQ(0.159,calcDelta());
