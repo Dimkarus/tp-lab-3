@@ -1,0 +1,8 @@
+#include <iostream>
+#include "task1.h"
+
+int main()
+{
+    std::cout << calcDelta() << std::endl << calcCost() << std::endl;
+    return 0;
+}
