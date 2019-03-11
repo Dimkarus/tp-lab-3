@@ -9,6 +9,7 @@
 string weekday[7] = {"sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"};
 string months[12] = {"january","february","march","april","may","june","july","august","september",
                      "october","november","december"};
+string zero_check = "";
 
 DateTime::DateTime(int day, int month, int year) {
         struct tm * timeinfo;
@@ -34,6 +35,9 @@ string  DateTime::getToday() {
     time_t rawtime = DateTime::rawtime;
     tm * timeinfo = localtime(&rawtime);
     mktime(timeinfo);
+    if (timeinfo->tm_mday <10){
+        zero_check = '0';
+    }
     string str = to_string(timeinfo->tm_mday) + " " + months[timeinfo->tm_mon]+ " " +
                  to_string(timeinfo->tm_year + 1900) + ", " +  weekday[timeinfo->tm_wday]  ;
     return str;
@@ -44,6 +48,9 @@ string DateTime::getPast(unsigned int N) {
     time_t sec = rawtime - N * 86400;
     tm * timeinfo = localtime(&sec);
     mktime(timeinfo);
+    if (timeinfo->tm_mday <10){
+        zero_check = '0';
+    }
     string str = to_string(timeinfo->tm_mday) + " " + months[timeinfo->tm_mon]+ " " +
                  to_string(timeinfo->tm_year + 1900) + ", " +  weekday[timeinfo->tm_wday]  ;
     return str;
@@ -59,7 +66,10 @@ string DateTime::getFuture(unsigned int N) {
     time_t sec = rawtime + N * 86400;
     tm * timeinfo = localtime(&sec);
     mktime(timeinfo);
-    string str = to_string(timeinfo->tm_mday) + " " + months[timeinfo->tm_mon]+ " " +
+    if (timeinfo->tm_mday <10){
+        zero_check = '0';
+    }
+    string str = zero_check + to_string(timeinfo->tm_mday) + " " + months[timeinfo->tm_mon]+ " " +
                  to_string(timeinfo->tm_year + 1900) + ", " +  weekday[timeinfo->tm_wday]  ;
     return str;
 
