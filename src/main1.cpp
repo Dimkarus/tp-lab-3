@@ -3,6 +3,6 @@
 
 int main()
 {
-    std::cout << calcDelta() << std::endl << calcCost() << std::endl;
+    std::cout << calcDelta() << " km"  << std::endl;
     return 0;
 }
