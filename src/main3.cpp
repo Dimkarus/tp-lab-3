@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include <ctime>
-#include"/Users/AlexSlav/Shtanuk/tp-lab-3/include/DateTime.h"
+#include "DateTime.h"
 using  namespace std;
 int main()
 {
