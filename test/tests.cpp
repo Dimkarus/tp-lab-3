@@ -41,7 +41,7 @@ TEST(date,datetime_gettoday)
 {
     DateTime dt(1,11,2018);
     std::string expect="01 november 2018, thursday";
-    EXPECT_EQ(expect,dt.getTomorrow());
+    EXPECT_EQ(expect,dt.getToday());
 }
 TEST(date,datetime_getdiff1)
 {
@@ -59,9 +59,9 @@ TEST(date,datetime_getdiff2)
 }
 TEST(calc,delta)
 {    
-    EXPECT_DOUBLE_EQ(0.159,calcDelta());
+    EXPECT_NEAR(0.159,calcDelta(), 0.01);
 }
 TEST(calc,pool_cost)
 {    
-    EXPECT_DOUBLE_EQ(72231.0,calcCost());
+    EXPECT_DOUBLE_EQ(72220.0,calcCost());
 }
