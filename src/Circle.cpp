@@ -1,23 +1,49 @@
 #include "Circle.h"
 
-Circle::Circle(double data_Radius){
-	setRadius(data_Radius);
+const double pi = 3.1415;
+
+void Circle::setRadius(double rad)
+{
+	radius = rad;
+	ference = 2 * pi*rad;
+	area = pi * rad*rad;
+}
+void Circle::setFerence(double fer)
+{
+	ference = fer;
+	radius = fer / (2 * pi);
+	area = pi * radius*radius;
+}
+void Circle::setArea(double ar)
+{
+	area = ar;
+	radius = sqrt(area / (pi));
+	ference = 2 * pi*radius;
+}
+double Circle::getRadius()
+{
+	//std::cout << radius << std::endl;
+	return radius;
+}
+double Circle::getFerence()
+{
+	//std::cout << ference << std::endl;
+	return ference;
+}
+double Circle::getArea()
+{
+	//std::cout << area << std::endl;
+	return area;
 }
 
-void Circle::setRadius(double data_Radius){
-	Radius = data_Radius;
-	Ference = PI*2*Radius;
-	Area = PI*Radius*Radius;
-}
+Circle::Circle(double radius)
+{
+	setRadius(radius);
 
-void Circle::setFerence(double data_Ference){
-	Ference = data_Ference;
-	Radius = Ference/(2*PI);
-	Area = PI*Radius*Radius;
-}
 
-void Circle::setArea(double data_Area){
-	Area = data_Area;
-	Radius = sqrt(Area/PI);
-	Ference = PI*2*Radius;
+}
+Circle::Circle() :radius(0.0)
+{
+	setRadius(0.0);
+
 }

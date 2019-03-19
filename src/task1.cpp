@@ -1,15 +1,25 @@
 #include "task1.h"
 
-double calcDelta(){
-	Circle first(6378100), second;
-	second.setFerence(first.getFerence() + 1);
-	double tmp = second.getRadius() - first.getRadius();
-	return tmp;
+
+double calcDelta()
+{
+
+	Circle earth1;
+	Circle earth2;
+	double earthRad = 6378.1 * 1000;
+	earth1.setRadius(earthRad);
+	earth2.setFerence(earth1.getFerence() + 1);
+	double diff = (earth2.getRadius() - earth1.getRadius());
+	diff = round(diff * 1000) / 1000;
+	return diff;
 }
 
-double calcCost(){
-	Circle a(3), b(4);
-	double price_fence = b.getFerence() * 2000;
-	double price_road = (b.getArea() - a.getArea()) * 1000;
-	return price_road + price_fence;
+double calcCost()
+{
+	Circle pool1(3);
+	Circle pool2(4);
+	double roadArea = (pool2.getArea() - pool1.getArea()) * 1000;
+	double roadDefend = pool2.getFerence() * 2000;
+	double cost = roadArea + roadDefend;
+	return cost;
 }

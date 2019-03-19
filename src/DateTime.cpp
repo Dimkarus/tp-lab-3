@@ -1,63 +1,89 @@
 #include "DateTime.h"
-using namespace std;
-string createStr(time_t a)
+#define _CRT_SECURE_NO_WARNINGS
+
+
+
+DateTime::DateTime(int day, int month, int year)
 {
-	time_t temp = a;
-	string ans;
-	tm * timeinfo;
-	timeinfo = localtime(&temp);
-	char arr[80];
-	strftime(arr, 80, "%d %B %Y, %A", timeinfo);
-	ans = arr;
-	return ans;
+	struct tm * timeinfo;
+	time(&now);
+	timeinfo = localtime(&now);
+	timeinfo->tm_year = year - 1900;
+	timeinfo->tm_mon = month - 1;
+	timeinfo->tm_mday = day;
+	now = mktime(timeinfo);
 }
 
-DateTime::DateTime() {
-	time(&t);
-}
-
-DateTime::DateTime(int d, int m, int y)
+DateTime::DateTime() :now()
 {
-	time_t tempSec; 
-	time(&tempSec);
-	tm *temp = localtime(&tempSec);
-	temp->tm_mday = d;
-	temp->tm_mon = m - 1;
-	temp->tm_year = y - 1900;
-	t = mktime(temp);
+	time(&now);
 }
 
-string DateTime::getToday() {
-
-	return createStr(t);
+DateTime::DateTime(const DateTime & clock) : now(clock.now)
+{
+	now = clock.now;
 }
 
-string DateTime::getYesterday() {
-	time_t temp = t;
-	temp = temp - 86400;
-	return createStr(temp);
+std::string givemestr(tm *dat)
+{
+	char buffer[40];
+	strftime(buffer, 40, "%d %B %G, %A", dat);
+	int i = 0;
+	while (buffer[i] != '\0') {
+		if (buffer[i] <= 'Z' && buffer[i] >= 'A') {
+			buffer[i] += 32;
+		}
+		i++;
+	}
+	std::string datadays = buffer;
+	std::cout << datadays << std::endl;
+	return datadays;
+
 }
 
-string DateTime::getTomorrow() {
-	time_t temp = t;
-	temp = temp + 86400;
-	return createStr(temp);
+std::string DateTime::getToday()
+{
+	tm * date = localtime(&now);
+	return givemestr(date);
 }
 
-string DateTime::getFuture(unsigned int N) {
-	time_t temp = t;
-	temp = temp + 86400 * N;
-	return createStr(temp);
+
+
+
+std::string DateTime::getYesterday()
+{
+
+	now -= 86400;
+	tm * date = localtime(&now);
+	return givemestr(date);
+}
+std::string DateTime::getTomorrow()
+{
+
+	now += 86401;
+	tm * date = localtime(&now);
+	return givemestr(date);
 }
 
-string DateTime::getPast(unsigned int N) {
-	time_t temp = t;
-	temp = temp - 86400 * N;
-	return createStr(temp);
-}
+std::string DateTime::getFuture(unsigned int N)
+{
 
-int DateTime::getDifference(DateTime &dt) {
-	int N;
-	N = ((*this).t - dt.t) / 86400;
-	return N;
+	now += 86400 * N;
+	tm * date = localtime(&now);
+	return givemestr(date);
+}
+std::string DateTime::getPast(unsigned int N)
+{
+
+	now -= 86400 * N;
+	tm * date = localtime(&now);
+	return givemestr(date);
+}
+int DateTime::getDifference(DateTime& some_date)
+{
+	time_t diff = now - some_date.now;
+	localtime(&diff);
+	diff = abs(diff / 86400);
+	std::cout << diff << std::endl;
+	return diff;
 }

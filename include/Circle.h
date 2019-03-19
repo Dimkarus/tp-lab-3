@@ -1,22 +1,20 @@
-#ifndef CIRCLE_H
-#define CIRCLE_H
+#pragma once
+#include <math.h>
+#include <iostream>
 
-#define PI 3.14
-#include <cmath>
-
-class Circle{
+class Circle
+{
 private:
-	double Radius;
-	double Ference;
-	double Area;
+	double radius;
+	double ference;
+	double area;
 public:
-	Circle(double data_Radius = 0);
-	void setRadius(double data_Radius);
-	void setFerence(double data_Ference);
-	void setArea(double data_Area);
-	double getRadius() { return Radius; }
-	double getFerence() { return Ference; }
-	double getArea() { return Area; }
+	Circle(double);
+	Circle();
+	void setRadius(double rad);
+	void setFerence(double fer);
+	void setArea(double ar);
+	double getRadius();
+	double getFerence();
+	double getArea();
 };
-
-#endif 

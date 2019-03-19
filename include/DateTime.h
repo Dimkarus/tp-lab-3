@@ -1,17 +1,22 @@
-#include <iostream>
+#pragma once
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream> 
+#include <ctime> 
 #include <string>
-#include <time.h>
-using namespace std;
-class DateTime{
+#include <math.h>
+class DateTime
+{
 private:
-	time_t t;
+	time_t now;
+
 public:
-	DateTime();
 	DateTime(int, int, int);
-	string getToday();
-	string getYesterday();
-	string getTomorrow();
-	string getFuture(unsigned int);
-	string getPast(unsigned int);
-	int getDifference(DateTime &);
-}
+	DateTime();
+	DateTime(const DateTime&);
+	std::string getToday();
+	std::string getYesterday();
+	std::string getTomorrow(); 
+	std::string getFuture(unsigned int N); 
+	std::string getPast(unsigned int N); 
+	int getDifference(DateTime&);
+};
