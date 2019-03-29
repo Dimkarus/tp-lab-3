@@ -1,9 +1,9 @@
-#include "DataTime.h"
+#include "DateTime.h"
 
 
 int main()
 {
-	Datetime time;
+	DateTime time;
 	time.getToday();
 	time.getFuture(3);
 	return 0;
