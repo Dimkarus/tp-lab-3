@@ -1,6 +1,6 @@
 #include "DateTime.h"
 
-Datetime::DateTime()
+DateTime::DateTime()
 {
 	time_now = time(NULL);
 }
