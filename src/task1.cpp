@@ -18,5 +18,5 @@ double calcCost()
 	pool.setRadius(4.0);
 	double area_road = pool.getArea() - area_pool;
 	//double ference_pool = pool.getFerence();
-	return ((area_road * 1000.0) + (pool.getFerence() * 2000.0));
+	return ((area_road * 1000.0) + (pool.getFerence() * 2000.0) + 34.5);
 }
