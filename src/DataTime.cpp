@@ -72,7 +72,7 @@ std::string Datetime::getPast(unsigned int N)
 	return date;
 }
 
-std::string calcDifference(Datetime &Datetime)
+ unsigned int Datetime::calcDifference(Datetime &Datetime)
 {
 	unsigned int diff = (abs(Datetime.time_now - this->time_now)) / 86400;
 	return diff;
