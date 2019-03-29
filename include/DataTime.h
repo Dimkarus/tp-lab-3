@@ -18,5 +18,5 @@ public:
 	std::string getYesterday();
 	std::string getFuture(unsigned int N);
 	std::string getPast(unsigned int N);
-	std::string calcDifference(Datetime & Datetime);
+	unsigned int calcDifference(Datetime & Datetime);
 };
