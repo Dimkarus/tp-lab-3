@@ -1,11 +1,11 @@
 #include "DataTime.h"
 
-Datetime::Datetime()
+Datetime::DateTime()
 {
 	time_now = time(NULL);
 }
 
-Datetime::Datetime(unsigned int day, unsigned int month, unsigned int year)
+DateTime::DateTime(unsigned int day, unsigned int month, unsigned int year)
 {
 	time_now = time(NULL);
 	struct tm *  time;
@@ -16,9 +16,9 @@ Datetime::Datetime(unsigned int day, unsigned int month, unsigned int year)
 	time_now = mktime(time);
 }
 
-Datetime::Datetime(const Datetime & Datetime)
+DateTime::DateTime(const DateTime & DateTime)
 {
-	time_now = Datetime.time_now;
+	time_now = DateTime.time_now;
 }
 
 std::string StringDate(time_t time_now)
@@ -38,42 +38,42 @@ std::string StringDate(time_t time_now)
 	return buff;
 }
 
-std::string Datetime::getToday()
+std::string DateTime::getToday()
 {
 	date = StringDate(time_now);
 	return date;
 }
 
-std::string Datetime::getTomorrow()
+std::string DateTime::getTomorrow()
 {
 	time_now += 86400;
 	date = StringDate(time_now);
 	return date;
 }
 
-std::string Datetime::getYesterday() 
+std::string DateTime::getYesterday() 
 {
 	time_now -= 86400;
 	date = StringDate(time_now);
 	return date;
 }
 
-std::string Datetime::getFuture(unsigned int N)
+std::string DateTime::getFuture(unsigned int N)
 {
 	time_now += 86400 * N;
 	date = StringDate(time_now);
 	return date;
 }
 
-std::string Datetime::getPast(unsigned int N)
+std::string DateTime::getPast(unsigned int N)
 {
 	time_now -= 86400 * N;
 	date = StringDate(time_now);
 	return date;
 }
 
- unsigned int Datetime::calcDifference(Datetime &Datetime)
+ unsigned int DateTime::calcDifference(DateTime &DateTime)
 {
-	unsigned int diff = (abs(Datetime.time_now - this->time_now)) / 86400;
+	unsigned int diff = (abs(DateTime.time_now - this->time_now)) / 86400;
 	return diff;
 }
